@@ -23,11 +23,6 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'myshit'
-        command: 'login'
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'myshit'
-        repository: 'pswwu/test123'
+        containerRegistry: 'Google Container Registry'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
