@@ -36,4 +36,4 @@ stages:
         inputs:
           SourceFolder: './yaml/'
           Contents: '*'
-          TargetFolder: '$(build.artifactstagingdirectory)'
+          TargetFolder: '$(System.DefaultWorkingDirectory)/yaml'
