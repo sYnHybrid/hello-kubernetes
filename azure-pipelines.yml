@@ -28,8 +28,9 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'hello-kubernetes'
-        publishLocation: 'Container'
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'myshit'
+              repository: 'test123'
+              command: 'buildAndPush'
+              Dockerfile: '**/Dockerfile'
