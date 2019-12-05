@@ -24,6 +24,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Google Container Registry'
-        repository: 'sit-sandbox7-sb'
+        repository: 'sit-sandbox7-sb/hello-kubernetes'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
