@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: hello-kubernetes:latest
+        image: eu.gcr.io/sit-sandbox7-sb/hello-kubernetes:latest
         ports:
         - containerPort: 8080
