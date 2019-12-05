@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: pswwu/test123:80
+        image: hello-kubernetes:latest
         ports:
         - containerPort: 8080
