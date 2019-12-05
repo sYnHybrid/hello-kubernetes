@@ -22,12 +22,18 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'Google Container Registry'
-        repository: 'sit-sandbox7-sb/hello-kubernetes'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: |
-          $(Build.BuildId)
-          latest
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'Google Container Registry'
+          repository: 'sit-sandbox7-sb/hello-kubernetes'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          tags: |
+           $(Build.BuildId)
+            latest
+
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '/yaml/'
+          Contents: '*'
+          TargetFolder: '$(build.artifactstagingdirectory)'
