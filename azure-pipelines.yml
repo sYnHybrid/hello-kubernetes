@@ -1,5 +1,6 @@
 # Docker
 
+
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -31,6 +32,11 @@ stages:
           tags: |
             $(Build.BuildId)
             latest
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: './yaml/'
+          Contents: '**'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)/yaml/'
 
       - task: PublishBuildArtifacts@1
         inputs:
