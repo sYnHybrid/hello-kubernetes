@@ -28,9 +28,9 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-          - task: Docker@2
-            inputs:
-              containerRegistry: 'myshit'
-              repository: 'test123'
-              command: 'buildAndPush'
-              Dockerfile: '**/Dockerfile'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'myshit'
+        repository: 'test123'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
