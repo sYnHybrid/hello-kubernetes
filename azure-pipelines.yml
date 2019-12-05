@@ -28,6 +28,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'myshit'
-        repository: 'test123'
+        repository: 'pswwu/test123'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
